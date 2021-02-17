@@ -48,7 +48,6 @@ const classes = someTheme => ({
     display: 'flex',
     flexDirection: 'row',
     justifyContent: 'center',
-    flexWrap: 'wrap',
     flexGrow: 1,
     borderRadius: '5px',
     padding: 0,
