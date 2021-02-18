@@ -18,18 +18,37 @@ const classes = someTheme => ({
     justifyContent: 'space-between',
     alignItems: 'center',
   },
+  headerContainerMob: {
+    maxWidth: '665px',
+    minHeight: '386px',
+    display: 'flex',
+    marginTop: '20px',
+    flexDirection: 'column',
+    justifyContent: 'space-between',
+    alignItems: 'flex-start',
+    padding: '10px',
+  },
   bigText: {
     width: '100%',
-    display: 'flex',
-    justifyContent: 'center',
-    alignItems: 'center',
     fontFamily: 'Roboto',
     fontStyle: 'normal',
     fontWeight: 'normal',
+
     fontSize: '40px',
     lineHeight: '70px',
     color: someTheme.palette.font.main,
     textAlign: 'center',
+  },
+  bigTextMob: {
+    marginTop: "10",
+    width: '100%',
+    fontFamily: 'Roboto',
+    fontStyle: 'normal',
+    fontWeight: 'normal',
+    fontSize: '26px',
+    lineHeight: '32px',
+    color: someTheme.palette.font.main,
+    textAlign: 'left',
   },
   quote: {
     display: 'flex',
@@ -54,17 +73,30 @@ const classes = someTheme => ({
     width: '100%',
     justifyContent: 'space-around',
   },
+  logo: {
+    maxWidth: '240px',
+    minHeight: '95px',
+  },
   logosMob: {
     display: 'flex',
     flexDirection: 'row',
     alignItems: 'flex-start',
-    width: '50%',
+    width: '100%',
     justifyContent: 'space-around',
+  },
+
+  logoMob: {
+    maxWidth: '75px',
   },
   quoteText: {
     fontSize: '18px',
     maxWidth: '100%',
     textAlign: 'center',
+  },
+  quoteTextMob: {
+    fontSize: '14px',
+    maxWidth: '100%',
+    textAlign: 'left',
   },
   author: {
     display: 'flex',
@@ -93,17 +125,23 @@ function MoreTestimonials() {
   const dim = useWindowDimensions();
 
   return (
-    <div className={style.headerContainer}>
+    <div className={dim.width > 900 ? style.headerContainer : style.headerContainerMob}>
       <img src={quotes} alt="quote" />
-      <div className={style.bigText}>Lorem ipsum dolor sit</div>
-      <div className={style.quoteText}>
+      <div className={dim.width > 900 ? style.bigText : style.bigTextMob}>Lorem ipsum dolor sit</div>
+      <div className={dim.width > 900 ? style.quoteText : style.quoteTextMob}>
         Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod
       </div>
       <div className={style.bottomContainer}>
         <div className={dim.width > 900 ? style.logos : style.logosMob}>
-          <img src={cdnet} alt="cdnet" width="60%" />
-          <img src={lifehacker} alt="lifehacker" width="60%" />
-          <img src={techrepublic} alt="techrepublic" width="60%" />
+          <div className={dim.width > 900 ? style.logo : style.logoMob}>
+            <img src={lifehacker} alt="lifehacker" width="100%" />
+          </div>
+          <div className={dim.width > 900 ? style.logo : style.logoMob}>
+            <img src={cdnet} alt="cdnet" width="100%" />
+          </div>
+          <div className={dim.width > 900 ? style.logo : style.logoMob}>
+            <img src={techrepublic} alt="techrepublic" width="100%" />
+          </div>
         </div>
       </div>
     </div>

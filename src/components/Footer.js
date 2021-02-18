@@ -3,14 +3,28 @@ import { makeStyles } from '@material-ui/core/styles';
 
 import theme from '../theme';
 
+import useWindowDimensions from '../helpers/useWindowDimensions';
+
 const classes = someTheme => ({
   footerContainer: {
+    padding: '10px',
     width: '100%',
     display: 'flex',
     marginTop: '100px',
-    paddingTop: '50px',
+    paddingTop: '20px',
     flexDirection: 'row',
     justifyContent: 'space-around',
+    borderTop: `1px solid #E5E5E5`,
+    flexWrap: 'wrap',
+  },
+  footerContainerMob: {
+    padding: '10px',
+    width: '100%',
+    display: 'flex',
+    marginTop: '100px',
+    paddingTop: '20px',
+    flexDirection: 'row',
+    justifyContent: 'flex-start',
     borderTop: `1px solid #E5E5E5`,
     flexWrap: 'wrap',
   },
@@ -18,6 +32,8 @@ const classes = someTheme => ({
     display: 'flex',
     flexDirection: 'column',
     minWidth: '150px',
+    marginTop: '40px',
+    marginRight: '20px',
   },
   name: {
     color: someTheme.palette.font.main,
@@ -47,10 +63,12 @@ const classes = someTheme => ({
 const useStyles = makeStyles(classes(theme));
 
 function Footer() {
+  const dim = useWindowDimensions();
+
   const style = useStyles();
 
   return (
-    <div className={style.footerContainer}>
+    <div className={dim.width > 500 ? style.footerContainer : style.footerContainerMob}>
       <div className={style.column}>
         <div className={style.name}>Lorem</div>
         <div className={style.row}>Lorem </div>

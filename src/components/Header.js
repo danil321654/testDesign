@@ -12,6 +12,10 @@ const classes = someTheme => ({
   headerContainer: {
     width: '100%',
   },
+  headerContainerMob: {
+    width: '100%',
+    padding: '40px',
+  },
   bigText: {
     width: '100%',
     height: '270px',
@@ -21,10 +25,22 @@ const classes = someTheme => ({
     fontFamily: 'Roboto',
     fontStyle: 'normal',
     fontWeight: 'normal',
+    marginLeft: '-5px',
     fontSize: '60px',
     lineHeight: '70px',
     color: someTheme.palette.font.main,
     textAlign: 'center',
+  },
+  bigTextMob: {
+    width: '100%',
+    height: '116px',
+    fontFamily: 'Roboto',
+    fontStyle: 'normal',
+    fontWeight: 'normal',
+    fontSize: '32px',
+    lineHeight: '38px',
+    color: someTheme.palette.font.main,
+    textAlign: 'left',
   },
   image: {
     display: 'flex',
@@ -41,6 +57,15 @@ const classes = someTheme => ({
     fontSize: '16px',
     lineHeight: '19px',
     marginBottom: '10px',
+  },
+
+  imageTextMob: {
+    fontFamily: 'Roboto',
+    fontStyle: 'normal',
+    fontWeight: 'normal',
+    fontSize: '14px',
+    lineHeight: '16px',
+    marginBottom: '20px',
   },
   input: {
     width: '489px',
@@ -91,6 +116,9 @@ const classes = someTheme => ({
     color: 'white',
     textTransform: 'none',
   },
+  screenshot: {
+    minWidth: "450px"
+  }
 });
 
 const useStyles = makeStyles(classes(theme));
@@ -100,16 +128,22 @@ function Header() {
   const dim = useWindowDimensions();
 
   return (
-    <div className={style.headerContainer}>
-      <div className={style.bigText}>Lorem ipsum dolor sit amet, </div>
+    <div className={dim.width > 900 ? style.headerContainer : style.headerContainerMob}>
+      <div className={dim.width > 900 ? style.bigText : style.bigTextMob}>Lorem ipsum dolor sit amet, </div>
       <div className={style.image}>
-        <div className={style.imageText}>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam</div>
+        <div className={dim.width > 900 ? style.imageText : style.imageTextMob}>
+          Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam
+        </div>
         <div className={dim.width > 900 ? style.input : style.inputMob}>
           <TextField className={style.inputField} label="Email address" variant="outlined" />
           <Button className={dim.width > 900 ? style.inputButton : style.inputButtonMob}> Start My Free Trial </Button>
         </div>
-        <img src={screenshot} width="100%" alt="" />
-        <img src={dim.width > 900 ? customers : customersMob} width="60%" alt="" />
+        <div className={style.screenshot}>
+          <img src={screenshot} width="100%" alt="" />
+        </div>
+        <div className={style.customers}>
+          <img src={dim.width > 900 ? customers : customersMob} width="100%" alt="" />
+        </div>
       </div>
     </div>
   );

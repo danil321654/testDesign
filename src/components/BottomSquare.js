@@ -9,13 +9,13 @@ import theme from '../theme';
 const classes = someTheme => ({
   headerContainer: {
     marginTop: '50px',
-    width: '60%',
+    width: '71%',
     backgroundColor: someTheme.palette.primary.main,
     minHeight: '408px',
     borderRadius: '5px',
     display: 'flex',
     flexDirection: 'column',
-    justifyContent: 'space-around',
+    justifyContent: 'center',
     alignItems: 'center',
   },
   bigText: {
@@ -62,7 +62,7 @@ const classes = someTheme => ({
     flexGrow: 0,
     borderRadius: '5px',
     padding: 0,
-    marginBottom: '-5%',
+    margin: '45px',
   },
   inputField: {
     width: '310px',
@@ -70,7 +70,6 @@ const classes = someTheme => ({
     backgroundColor: 'white',
     borderTopLeftRadius: '4px',
     borderBottomLeftRadius: '4px',
-    marginBottom: '2px',
   },
 
   inputButton: {
@@ -122,7 +121,7 @@ const classes = someTheme => ({
     marginTop: '50px',
     width: '80%',
     backgroundColor: someTheme.palette.primary.main,
-    minHeight: '408px',
+    minHeight: '325px',
     borderRadius: '5px',
     display: 'flex',
     flexDirection: 'column',
@@ -151,7 +150,13 @@ function BottomSquare() {
         <Button className={dim.width > 900 ? style.inputButton : style.inputButtonMob}> Start My Free Trial </Button>
       </div>
 
-      <div style={{ width: dim.width > 900 ? 'auto' : '70vw' }}>
+      <div
+        style={{
+          width: dim.width > 900 ? 'auto' : '70vw',
+          color: theme.palette.font.main,
+          fontSize: dim.width > 500 ? '16px' : '12px',
+        }}
+      >
         Are you a Freelancer?{' '}
         <a href="/" className={style.white}>
           Get a Free Account Here

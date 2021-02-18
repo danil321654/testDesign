@@ -11,20 +11,19 @@ const classes = someTheme => ({
   featuresContainer: {
     marginTop: '100px',
     minWidth: '50%',
-    maxWidth: 'min-content',
-    height: '1100px',
+    maxWidth: '100%',
+    minHeight: '1100px !important',
     display: 'flex',
     flexDirection: 'column',
-    justifyContent: 'space-around',
+    justifyContent: 'space-between',
     alignItems: 'center',
     boxSizing: 'border-box',
   },
   featuresContainerMob: {
-    marginTop: '100px',
-    minWidth: '50%',
+    minWidth: '90%',
     maxWidth: 'min-content',
-    height: '1300px',
-
+    height: '650px',
+    flexShrink: 0,
     display: 'flex',
     flexDirection: 'column',
     justifyContent: 'space-around',
@@ -71,6 +70,7 @@ const classes = someTheme => ({
     color: someTheme.palette.font.main,
     wordWrap: 'break-word',
     textAlign: 'center',
+    marginBottom: '10px',
   },
   image: {
     display: 'flex',
@@ -81,6 +81,16 @@ const classes = someTheme => ({
     color: '#777777',
   },
 
+  imageMob: {
+    display: 'flex',
+    flexDirection: 'column',
+    justifyContent: 'center',
+    alignItems: 'center',
+
+    color: '#777777',
+    width: '80%',
+    marginBottom: '-30px',
+  },
   centerText: {
     flexDirection: 'column',
     justifyContent: 'space-around',
@@ -101,6 +111,7 @@ const classes = someTheme => ({
     fontWeight: 'normal',
     fontSize: '18px',
     lineHeight: '21px',
+    color: '#484A53',
   },
 });
 
@@ -119,9 +130,11 @@ function FeaturesSocial() {
         <div className={style.biggerText} style={{ fontSize: dim.width > 900 ? '46px' : '28px' }}>
           Lorem ipsum dolor sit{' '}
         </div>
-        <div className={style.smallerText}>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam</div>
+        <div className={style.smallerText} style={{ fontSize: dim.width > 900 ? '18px' : '14px' }}>
+          Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam
+        </div>
       </div>
-      <div className={style.image}>
+      <div className={dim.width > 900 ? style.image : style.imageMob}>
         <img src={features} width="100%" alt="" />
       </div>
     </div>

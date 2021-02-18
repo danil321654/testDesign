@@ -38,7 +38,9 @@ const classes = someTheme => ({
     widt: '100%',
   },
   smallFeaturesContainer: {
-    width: '70%',
+    marginTop: '50px',
+      marginBottom: '50px',
+    width: '80%',
     display: 'flex',
     flexDirection: 'row',
     justifyContent: 'space-around',

@@ -37,16 +37,16 @@ const classes = someTheme => ({
   },
 
   quoteText: {
-    maxWidth: '50%',
+    maxWidth: '70%',
     minWidth: '500px',
     textAlign: 'center',
   },
 
   quoteTextMob: {
-    maxWidth: '50%',
-    minWidth: '370px',
-    fontSize: '16px',
-    textAlign: 'center',
+    fontSize: '10px',
+    maxWidth: '80%',
+    textAlign: 'left',
+    margin: '5px',
   },
   author: {
     display: 'flex',
@@ -59,12 +59,31 @@ const classes = someTheme => ({
     fontSize: '16px',
     lineHeight: '19px',
   },
+  authorMob: {
+    display: 'flex',
+    flexDirection: 'column',
+    justifyContent: 'space-around',
+    alignItems: 'center',
+    width: '210px',
+    height: '85px',
+    margin: '50px',
+    fontSize: '14px',
+    lineHeight: '16px',
+    textAlign: 'center',
+  },
   profile: {
     backgroundColor: someTheme.palette.secondary.main,
     borderRadius: '50%',
     padding: 0,
     width: '85px',
     height: '85px',
+  },
+  profileMob: {
+    backgroundColor: 'white',
+    borderRadius: '50%',
+    padding: 0,
+    width: '56px',
+    height: '56px',
   },
 });
 
@@ -78,14 +97,14 @@ function Testimonials() {
     <div className={style.headerContainer}>
       <div className={style.bigText}>Lorem ipsum dolor sit amet, consetetur</div>
       <div className={style.quote}>
-        <img src={quotes} alt="quote" />
+        <img src={quotes} alt="quote" width="5%" />
         <div className={dim.width > 900 ? style.quoteText : style.quoteTextMob}>
           Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt utLorem ipsum
           dolor sit amet, consetetur sadipscing elitr, sed diam{' '}
         </div>
       </div>
-      <div className={style.author}>
-        <div className={style.profile}>
+      <div className={dim.width > 900 ? style.author : style.authorMob}>
+        <div className={dim.width > 900 ? style.profile : style.profileMob}>
           <img src={profile} alt="profile" width="100%" />
         </div>
         <div className={style.credentials}>

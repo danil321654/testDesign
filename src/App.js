@@ -16,8 +16,9 @@ const classes = {
   container: {
     backgroundColor: 'white',
     width: '100%',
-    height: '6314px',
-    overflowY: "hidden"
+    height: 'auto',
+    overflowY: "hidden",
+    maxWidth: '100vw',
   },
   main: {
     marginTop: '70px',

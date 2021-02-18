@@ -14,7 +14,7 @@ const classes = someTheme => ({
     display: 'flex',
     flexDirection: 'row',
     alignItems: 'center',
-    marginTop: '10vh',
+    marginTop: '150px',
     minWidth: '375px',
   },
   featuresContainerMob: {
@@ -37,22 +37,24 @@ const classes = someTheme => ({
     fontFamily: 'Roboto',
     fontStyle: 'normal',
     fontWeight: 'normal',
-    fontSize: '55px',
+    fontSize: '46px',
     lineHeight: '54px',
     color: 'white',
     textAlign: 'right',
     wordWrap: 'normal',
     marginTop: '10vw',
-    marginRight: '0',
+    marginLeft: '7vw',
+    marginRight: '6vw',
     flexShrink: 1,
   },
   image: {
-    maxWidth: '1350px',
-    minWidth: '12%',
+    maxWidth: '1150px',
+    minWidth: '1000px',
     padding: 0,
-    height: '100% ',
+    maxHeight: '1010px',
     alignSelf: 'center',
-    marginLeft: '-41%',
+    marginTop: '-7vh',
+    marginLeft: '-38%',
     flexGrow: 1,
     flexShrink: 1,
 
@@ -65,12 +67,14 @@ const classes = someTheme => ({
   downloadNow: {
     borderRadius: '30px',
     width: '243px',
-    height: '60px',
+    minHeight: '60px !important',
     marginTop: '10vw',
     marginBottom: '10vw',
+    marginLeft: '-22%',
     backgroundColor: someTheme.palette.primary.main,
     color: 'white',
     fontSize: '18px',
+    fontWeight: '400',
     lineHeight: '21px',
     textTransform: 'none',
     filter: 'drop-shadow(0px 6px 10px rgba(0, 115, 255, 0.2))',
@@ -81,11 +85,12 @@ const classes = someTheme => ({
     justifyContent: 'center',
     alignItems: 'center',
     flexGrow: 1,
-    height: '100%',
+    height: '600px',
+    minHeight: '400px',
     boxSizing: 'border-box',
     backgroundColor: someTheme.palette.secondary.main,
     minWidth: '375px',
-    flexShrink: 0,
+    flexShrink: 1,
 
     paddingRight: '12%',
   },
@@ -97,21 +102,22 @@ const classes = someTheme => ({
     alignItems: 'center',
   },
   textMob: {
-    width: '100%',
+    width: '60%',
     fontFamily: 'Roboto',
     fontStyle: 'normal',
     fontWeight: 'normal',
-    fontSize: '26px',
-    lineHeight: '24px',
+    fontSize: '32px',
+    lineHeight: '36px',
     color: 'white',
-    textAlign: 'center',
+    textAlign: 'left',
     wordWrap: 'normal',
     marginTop: '10vw',
+    marginBottom: '-10vw',
   },
   imageMob: {
-    marginTop: '-12vw',
-    maxWidth: '1350px',
-    minWidth: '12%',
+    marginTop: '-20vh',
+    maxWidth: '700px',
+    minWidth: '600px',
     padding: 0,
     height: '100% ',
     alignSelf: 'center',
@@ -123,9 +129,8 @@ const classes = someTheme => ({
 
   downloadNowMob: {
     borderRadius: '30px',
-    width: '243px',
+    width: '243px !important',
     height: '60px',
-    marginRight: '15%',
     marginTop: '10vw',
     marginBottom: '10vw',
     backgroundColor: someTheme.palette.primary.main,
@@ -134,15 +139,15 @@ const classes = someTheme => ({
     lineHeight: '21px',
     textTransform: 'none',
     filter: 'drop-shadow(0px 6px 10px rgba(0, 115, 255, 0.2))',
-    marginLeft: '15%',
   },
   leftMob: {
     display: 'flex',
     flexDirection: 'column',
-    justifyContent: 'center',
+    justifyContent: 'space-around',
     alignItems: 'center',
+    paddingBottom: '80px',
     flexGrow: 1,
-    height: '100%',
+    minHeight: '450px',
     boxSizing: 'border-box',
     backgroundColor: someTheme.palette.secondary.main,
     minWidth: '80vw',
@@ -156,16 +161,16 @@ function FeaturesDownload() {
   const dim = useWindowDimensions();
 
   return (
-    <div className={style.featuresContainer}>
-      <div className={dim.width > 900 ? style.box : style.boxMob}>
-        <div className={dim.width > 900 ? style.left : style.leftMob}>
-          <div className={dim.width > 900 ? style.text : style.textMob}>
+    <div className={dim.width > 1100 ? style.featuresContainer : style.featuresContainerMob}>
+      <div className={dim.width > 1100 ? style.box : style.boxMob}>
+        <div className={dim.width > 1100 ? style.left : style.leftMob}>
+          <div className={dim.width > 1100 ? style.text : style.textMob}>
             Lorem ipsum <b>dolor sit amet,</b>{' '}
           </div>
-          <Button className={style.downloadNow}>Download Now</Button>
+          <Button className={dim.width > 1100 ? style.downloadNow : style.downloadNowMob}>Download Now</Button>
         </div>
-        <div className={dim.width > 900 ? style.image : style.imageMob}>
-          <img src={dim.width > 900 ? screenshot : screenshotMob} className={style.transparent} width="100%" alt="" />
+        <div className={dim.width > 1100 ? style.image : style.imageMob}>
+          <img src={dim.width > 1100 ? screenshot : screenshotMob} className={style.transparent} width="100%" alt="" />
         </div>
       </div>
     </div>

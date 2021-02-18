@@ -9,7 +9,7 @@ import theme from '../theme';
 const classes = someTheme => ({
   headerContainer: {
     backgroundColor: 'white',
-    width: '100%',
+    width: '100vw',
     height: '70px',
     borderBottom: `1px solid #DBDBDB`,
     position: 'fixed',
@@ -21,11 +21,10 @@ const classes = someTheme => ({
     padding: '0 37.69px 0 32px',
     zIndex: 10,
     paddingRight: '20px',
-    minWidth: '370px',
   },
   headerLogo: {
     color: someTheme.palette.primary.main,
-    fontfamily: '"Segoe UI",Roboto,Frutiger,"Frutiger Linotype","Dejavu Sans","Helvetica Neue",Arial,sans-serif',
+    fontFamily: '"Segoe UI",Roboto,Frutiger,"Frutiger Linotype","Dejavu Sans","Helvetica Neue",Arial,sans-serif',
     fontSize: '32px',
     fontStyle: 'normal',
     fontWeight: '350',
@@ -43,7 +42,7 @@ const classes = someTheme => ({
   },
   navContainer: {
     display: 'flex',
-    justifyContent: 'space-between',
+    justifyContent: 'flex-end',
     flexDirection: 'row',
     flexGrow: 1,
     alignItems: 'center',
@@ -57,7 +56,9 @@ const classes = someTheme => ({
   link: {
     color: someTheme.palette.font.main,
     display: 'flex',
-    marginRight: '50px',
+    fontSize: "16px",
+    width: "min-content",
+    marginRight: "30px"
   },
   login: {
     borderRadius: '20px',
@@ -66,20 +67,21 @@ const classes = someTheme => ({
     border: `1px solid #DBDBDB`,
     marginRight: '20px',
     textTransform: 'none',
+    boxSizing: "border-box"
   },
   startFreeTrial: {
     borderRadius: '20px',
     width: '180px',
-    height: '41px',
+    height: '42px',
     border: `1px solid #DBDBDB`,
     backgroundColor: someTheme.palette.primary.main,
     color: 'white',
     textTransform: 'none',
+    boxSizing: "border-box"
   },
   linkButton: {
     color: someTheme.palette.font.main,
     display: 'flex',
-    marginRight: '50px',
     backgroundColor: 'transparent',
     border: 'none',
     cursor: 'pointer',
@@ -88,6 +90,7 @@ const classes = someTheme => ({
     textDecoration: 'none',
     textTransform: 'none',
     fontWeight: '400',
+    marginRight: "30px",
     fontSize: '16px',
     '&:hover': {
       textDecoration: 'underline',
