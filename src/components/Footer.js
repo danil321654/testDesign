@@ -33,7 +33,7 @@ const classes = someTheme => ({
     flexDirection: 'column',
     minWidth: '150px',
     marginTop: '40px',
-    marginRight: '20px',
+    margin: 'auto',
   },
   name: {
     color: someTheme.palette.font.main,

@@ -56,7 +56,7 @@ const classes = someTheme => ({
     minHeight: '206px',
     height: '206px',
     width: '446px',
-    minWidth: '350px',
+    minWidth: '300px',
   },
   bigText: {
     width: '100%',
